@@ -1,0 +1,25 @@
+.color{
+  background-color: #F0EAEA;
+  border-bottom: 3px solid chocolate; 
+}
+
+img{
+  width: 150px;
+  height: 110px;
+}
+
+.letra{
+  color: black;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.letra1{
+  color: saddlebrown;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.bg{
+  background-color: gray;
+}

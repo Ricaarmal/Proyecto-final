@@ -9,10 +9,14 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+//session
+const passport     = require('./helpers/passport');
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);  
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/elfinal-server', {useMongoClient: true})
+  .connect(process.env.DB, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -23,6 +27,24 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+app.use(require('cors')({
+  origin: true,
+  credentials: true
+}))
+
+// Sessions
+app.use(session({
+  secret: "bliss",
+  resave: true,
+  saveUninitialized: true,
+  cookie: { httpOnly: true, maxAge: 241920000 },
+  store: new MongoStore({
+    mongooseConnection:mongoose.connection,
+    ttl: 30 * 24 * 60 * 60 //30 días
+  }),
+}));
+
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -37,6 +59,10 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
+
+//passport
+app.use(passport.initialize())
+app.use(passport.session())
       
 
 app.set('views', path.join(__dirname, 'views'));
@@ -47,11 +73,15 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'CasaBonitaMuebles';
 
 
 
 const index = require('./routes/index');
+const products = require('./routes/product');
+const auth  = require('./routes/auth');
+app.use('/', auth);
+app.use('/', products);
 app.use('/', index);
 
 
