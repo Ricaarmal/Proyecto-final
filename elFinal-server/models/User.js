@@ -3,11 +3,9 @@ const Schema = require('mongoose').Schema;
 
 const userSchema = new require('mongoose').Schema({
     username: String,
-    photoURL: String,
-    email: String,
-    profile:{
-        type: Schema.Types.ObjectId,
-        ref: 'Profile'
+    email: {
+        type: String,
+        require: true
     },
     role:{
         type: String,
@@ -18,6 +16,12 @@ const userSchema = new require('mongoose').Schema({
         {
             type: Schema.Types.ObjectId,
             ref: 'Product'
+        }
+    ],
+    messages:[
+        {
+      type: Schema.Types.ObjectId,
+      ref: 'Message'  
         }
     ]
 },{

@@ -6,16 +6,23 @@ const productSchema = new Schema({
     type: String,
     required: true
   },
+  price:{
+    type: Number,
+    required: true
+  },
   user:{
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  pics:[
+  quantity:{
+    type: Number,
+    required: true
+  },
+  image:
     {
     type: String,
-    default: "http://estiloambientacion.com.ar/imagenes2/muebles/como-elegir-05b.jpg"
+    default: ""
     }
-  ]
 },{
   timestamps:{
     createdAt: 'created_at',

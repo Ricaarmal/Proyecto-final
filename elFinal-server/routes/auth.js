@@ -16,12 +16,8 @@ function isAuthenticated(req,res,next){
 
 
 router.get('/admin', isAuthenticated, (req,res)=>{
-    // const admin = req.user.role === "ADMIN";
-    // res.json({message: "Esto es Privao"});
-    Product.find()
-    .then(phones=>{
-        res.json(phones)
-    }).catch(e=>next(e))
+    const admin = req.user.role === "ADMIN";
+    res.json({message: "Esto es Privao"});
 });
 
 
@@ -33,7 +29,7 @@ router.post('/login', passport.authenticate('local'), (req,res,next)=>{
 router.post('/signup',(req,res,next)=>{
     User.register(req.body, req.body.password)
     .then(user=>{
-      res.json(user)
+      res.status(202).json(user)
     })
     .catch(e=>next(e));
 })

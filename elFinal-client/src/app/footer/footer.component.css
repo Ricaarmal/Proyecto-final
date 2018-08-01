@@ -1,0 +1,9 @@
+.color{
+  background-color: #F0EAEA;
+  border-top: 3px solid chocolate; 
+}
+
+.letra-color{
+  color: rgb(133, 34, 34);
+  display: block;
+}
