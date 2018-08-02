@@ -34,3 +34,5 @@ const userSchema = new require('mongoose').Schema({
 userSchema.plugin(passportLocalMongoose, {usernameField:'email'})
 
 module.exports = require('mongoose').model('User', userSchema);
+
+//facebookId: profile.id he ahi lo que viene debe venir en consola.

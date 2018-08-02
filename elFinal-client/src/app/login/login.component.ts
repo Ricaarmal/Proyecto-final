@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { Jsonp } from '@angular/http';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,8 @@ import { Jsonp } from '@angular/http';
 export class LoginComponent implements OnInit {
 
   auth: object = {};
-  user;
+  usuario: any = {};
+
   constructor(
   private authService: AuthService,
   private router: Router
@@ -20,16 +21,23 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.auth)
     .subscribe(user => {
-      this.user = user;
       localStorage.setItem('user', JSON.stringify(user));
+      this.usuario = user;
+      console.log(this.usuario);
+      if ( this.usuario.role === 'ADMIN' ) {
+      this.router.navigate(['admin']);
+       }
+      if ( this.usuario.role === 'TENDER' ) {
+         this.router.navigate(['order']);
+         }
+      // else {
+      //    this.router.navigate(['productos']);
+      //  }
     });
   }
 
   ngOnInit() {
-      const user = JSON.parse(localStorage.getItem('user'));
-      if (user.role !== 'ADMIN') {
-      this.router.navigate(['admin']);
-    }
+
   }
 
 }

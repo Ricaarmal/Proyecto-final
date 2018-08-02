@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +23,10 @@ import { routes } from './routes';
 // Servicios
 
 import { AuthService } from './services/auth.service';
+import { ProductsComponent } from './products/products.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { CreateProductComponent } from './admin/create-product/create-product.component';
+import { SignupComponent } from './admin/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,11 @@ import { AuthService } from './services/auth.service';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    MainPageComponent
+    MainPageComponent,
+    ProductsComponent,
+    AdminComponent,
+    CreateProductComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,8 @@ import { AuthService } from './services/auth.service';
     NgbModule.forRoot(),
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
 
   ],
   providers: [AuthService],

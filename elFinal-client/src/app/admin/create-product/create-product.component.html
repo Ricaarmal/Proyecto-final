@@ -1,0 +1,25 @@
+<section class="container">
+  <div class="raw">
+    <h2>Crear Mueble</h2>
+    <p>
+    Nombre de su producto:
+    <input type="text" placeholder="mueble" [(ngModel)]="furniture.name">
+    </p>
+    <p>
+    Cantidad en Almacen:
+    <input type="number" placeholder="1 o 40" [(ngModel)]="furniture.quantity">
+    </p>
+    <p>
+    Imagen del Producto:
+    <input type="file" [(ngModel)]="furniture.image">
+    </p>
+    <p>
+    Precio:
+    <input type="number" [(ngModel)]="furniture.price">  
+    </p>
+    <button (click)="saveFurniture(furniture)">Crear</button>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,18 @@
+<section>
+    <form #lupeForm="ngForm" (ngSubmit)="recibiendoElForm(lupeForm)" >
+      <input required name="username" [(ngModel)]="username" placeholder="Nombre de Usuario" type="text">
+      <br>
+      <input required name="email" [(ngModel)]="correo" placeholder="muebles@muebles.com" type="email">
+      <br>
+      <input #myPassword="ngModel" required name="password" [(ngModel)]="password" placeholder="Tu password" type="password">
+      <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
+        <p style="background:red;color:white;border-radius: 30%" [hidden]="!myPassword.errors.required">
+          Password is required
+        </p>
+      </div>
+      <br>
+      <input required name="password2" [(ngModel)]="password2" placeholder="repite" type="password">
+      <input type="submit">
+    </form>
+  
+  </section>

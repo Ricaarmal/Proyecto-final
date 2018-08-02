@@ -1,13 +1,18 @@
-<div>
-  <div>
+<div class="container">
+  <div class="raw">
+    <h2>Iniciar Sesion</h2>
     <p>
       Introduzca su Correo:
-      <input type="email" name="email" [(ngModel)]="email" required>
+      <br>
+      <input type="email" placeholder="muebles@muebles.com" [(ngModel)]="auth.email">
     </p>
 
     <p>
       Introduzca su Contraseña:
-      <input type="password" name="password" [(ngModel)]="password" required>
+      <br>
+      <input type="password" [(ngModel)]="auth.password">
     </p>
+
+    <button (click)="login()">Login</button>
   </div>
 </div>

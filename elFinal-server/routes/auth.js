@@ -14,6 +14,10 @@ function isAuthenticated(req,res,next){
     }
 }
 
+function checkRole(role){
+        
+}
+
 
 router.get('/admin', isAuthenticated, (req,res)=>{
     const admin = req.user.role === "ADMIN";
@@ -22,17 +26,23 @@ router.get('/admin', isAuthenticated, (req,res)=>{
 
 
 router.post('/login', passport.authenticate('local'), (req,res,next)=>{
-        res.json(user)    
+        console.log(req.user)
+        return res.status(200).json(req.user);    
 });
 
 
 router.post('/signup',(req,res,next)=>{
     User.register(req.body, req.body.password)
     .then(user=>{
-      res.status(202).json(user)
+      return res.status(202).json(user)
     })
     .catch(e=>next(e));
 })
 
+/* 
+router.post('facebook/login', passport.authenticate('facebook-token') ,(req,res)=>{
+    res.json(req.user)
+})
+*/
 
 module.exports = router;
