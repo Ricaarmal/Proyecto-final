@@ -10,7 +10,9 @@ import { ProductsService } from '../../services/products.service';
 export class CreateProductComponent implements OnInit {
 
   furniture: object = {};
-  newProduct: any;
+  newProduct: object = {};
+  isCollapsed = false;
+  file: any;
 
   constructor(
   private productService: ProductsService,
@@ -20,11 +22,23 @@ export class CreateProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  getFile(e) {
+    this.file = e.target.files[0];
+  }
+
   saveFurniture() {
-    this.productService.createProduct(this.furniture)
+
+    const newFurniture = new FormData();
+    for (let p in this.furniture) {
+      newFurniture.append(p, this.furniture[p])
+    }
+    newFurniture.append('image', this.file);
+
+    this.productService.createProduct(newFurniture)
     .subscribe(producto => {
       console.log(producto);
       this.newProduct = producto;
+      this.router.navigate(['']);
     });
   }
 

@@ -23,12 +23,11 @@ export class LoginComponent implements OnInit {
     .subscribe(user => {
       localStorage.setItem('user', JSON.stringify(user));
       this.usuario = user;
-      console.log(this.usuario);
       if ( this.usuario.role === 'ADMIN' ) {
       this.router.navigate(['admin']);
        }
       if ( this.usuario.role === 'TENDER' ) {
-         this.router.navigate(['order']);
+         this.router.navigate(['productos']);
          }
       // else {
       //    this.router.navigate(['productos']);

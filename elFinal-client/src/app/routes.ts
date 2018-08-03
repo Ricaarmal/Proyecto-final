@@ -5,7 +5,7 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { SignupComponent } from './admin/signup/signup.component';
 import { CreateProductComponent } from './admin/create-product/create-product.component';
 import { Routes } from '@angular/router';
-import { patch } from 'webdriver-js-extender';
+import { ProductsComponent } from './products/products.component';
 
 export const routes: Routes = [
   {
@@ -16,13 +16,14 @@ export const routes: Routes = [
   },
   {
     path: 'admin', component: AdminComponent,
-    children: [
-      {
-        path: 'signup', component: SignupComponent
-      },
-      {
-        path: 'createproduct', component: CreateProductComponent
-      }
-    ]
+  },
+  {
+    path: 'signup', component: SignupComponent
+  },
+  {
+    path: 'createproduct', component: CreateProductComponent
+  },
+  {
+    path: 'products', component: ProductsComponent
   }
 ];

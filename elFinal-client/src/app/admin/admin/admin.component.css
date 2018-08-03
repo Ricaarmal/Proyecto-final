@@ -1,0 +1,38 @@
+@media (max-width: 450px){
+  .saludo{
+    margin: 30px;
+    text-align: center;
+    width: 300px;
+    border: 3px solid brown;
+  }
+
+  .container{
+    border: 3px solid salmon;
+    margin-left: 50px;
+    margin-top: 30px; 
+  }
+  
+}
+
+.container{
+  display: flex;
+  border: 3px solid salmon;
+  margin-left: 110px;
+  margin-top: 30px; 
+}
+
+.saludo{
+  margin: 30px;
+  text-align: center;
+  border: 3px solid brown;
+  border-radius: 10%;
+}
+
+app-create-product{
+  margin:  20px;
+  padding-left: 20px;
+}
+
+app-signup{
+  margin: 20px;
+}

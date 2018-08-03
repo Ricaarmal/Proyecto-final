@@ -15,6 +15,10 @@ import { FooterComponent } from './footer/footer.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ProductsComponent } from './products/products.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { CreateProductComponent } from './admin/create-product/create-product.component';
+import { SignupComponent } from './admin/signup/signup.component';
 
 // Routes
 
@@ -23,10 +27,7 @@ import { routes } from './routes';
 // Servicios
 
 import { AuthService } from './services/auth.service';
-import { ProductsComponent } from './products/products.component';
-import { AdminComponent } from './admin/admin/admin.component';
-import { CreateProductComponent } from './admin/create-product/create-product.component';
-import { SignupComponent } from './admin/signup/signup.component';
+import { ProductsService } from './services/products.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { SignupComponent } from './admin/signup/signup.component';
     FormsModule
 
   ],
-  providers: [AuthService],
+  providers: [AuthService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
