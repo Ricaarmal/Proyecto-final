@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-main-page',
@@ -9,8 +10,9 @@ import { map } from 'rxjs/operators';
 })
 export class MainPageComponent implements OnInit {
   images: Array<string>;
-
-  constructor( private http: HttpClient ) { }
+  url = 'http://localhost:3000/products';
+  constructor( private http: HttpClient,
+  private https: Http ) { }
 
   ngOnInit() {
     this.http.get('https://picsum.photos/list')

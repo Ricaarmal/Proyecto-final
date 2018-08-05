@@ -28,6 +28,9 @@ import { routes } from './routes';
 
 import { AuthService } from './services/auth.service';
 import { ProductsService } from './services/products.service';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { MessagesComponent } from './product-detail/messages/messages.component';
+import { ShowMessagesComponent } from './admin/show-messages/show-messages.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { ProductsService } from './services/products.service';
     ProductsComponent,
     AdminComponent,
     CreateProductComponent,
-    SignupComponent
+    SignupComponent,
+    ProductDetailComponent,
+    MessagesComponent,
+    ShowMessagesComponent
   ],
   imports: [
     BrowserModule,

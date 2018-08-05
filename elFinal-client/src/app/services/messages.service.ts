@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
-  url = 'http://localhost:3000/products';
+export class MessagesService {
+
+  url = 'http://localhost:3000/messages';
 
   constructor(private http: Http) { }
 
@@ -17,12 +19,12 @@ export class ProductsService {
   }
 
   getOneProduct(id): Observable<string> {
-    return this.http.get(this.url + '/' + id)
+    return this.http.get(this.url + id)
     .pipe(map((res: Response) => res.json() ));
   }
 
   createProduct(obj) {
-    return this.http.post(this.url + 'new', obj)
+    return this.http.post(this.url + '/create', obj)
     .pipe(map((res: Response) => res.json()));
   }
 

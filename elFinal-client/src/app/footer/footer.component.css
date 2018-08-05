@@ -7,3 +7,10 @@
   color: rgb(133, 34, 34);
   display: block;
 }
+
+.bottom{
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}

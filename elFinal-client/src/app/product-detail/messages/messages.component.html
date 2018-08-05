@@ -1,0 +1,37 @@
+
+<div *ngIf="usuario.role == 'ADMIN' || usuario.role == 'TENDER'">
+  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    Crear Pedido
+  </button>
+</div>
+
+
+<div id="collapseExample" [ngbCollapse]="isCollapsed" *ngIf="usuario.role == 'ADMIN' || usuario.role == 'TENDER'">
+  <div class="card">
+    <div class="card-body">
+      <section class="container">
+        <div class="raw">
+          <h2>Crear Pedido</h2>
+          <p>
+          Nombre del Cliente:
+          <input type="text" placeholder="Juan Perez" [(ngModel)]="message.clientName">
+          </p>
+          <p>
+          Direccion del cliente:
+          <input type="text" placeholder="Direccion" [(ngModel)]="message.address">
+          </p>
+          <p>
+          Telefono del Cliente:
+          <input type="number" placeholder="[55]5555-5555" [(ngModel)]="message.phone">
+          </p>
+          <p>
+            Cuantos necesitas:
+          <input type="number" placeholder="cantidad" [(ngModel)]="message.quantity" min="0">
+          </p>
+          <button (click)="saveMessage(message)">Crear</button>
+        </div>
+      </section>      
+    </div>
+  </div>
+</div>

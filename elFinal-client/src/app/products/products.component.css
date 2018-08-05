@@ -1,7 +1,25 @@
+section{
+  display: block;
+  margin-top: 20px;
+}
+
 .container{
-  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap; 
 }
 
 .container1{
-  border: 2px solid brown;
+  border: 1px solid brown;
+  width: 302px;
+  margin: 20px;
+}
+
+h3{
+  text-align: center;
+  color: chocolate;
+}
+
+img{
+  width: 300px;
+  height: 350px;
 }

@@ -27,11 +27,11 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['admin']);
        }
       if ( this.usuario.role === 'TENDER' ) {
-         this.router.navigate(['productos']);
+         this.router.navigate(['products']);
          }
-      // else {
-      //    this.router.navigate(['productos']);
-      //  }
+      if (this.usuario.role === 'USER') {
+          this.router.navigate(['products']);
+        }
     });
   }
 

@@ -6,6 +6,7 @@ import { SignupComponent } from './admin/signup/signup.component';
 import { CreateProductComponent } from './admin/create-product/create-product.component';
 import { Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,9 @@ export const routes: Routes = [
   },
   {
     path: 'createproduct', component: CreateProductComponent
+  },
+  {
+    path: 'detail/:id', component: ProductDetailComponent
   },
   {
     path: 'products', component: ProductsComponent
