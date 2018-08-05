@@ -2,12 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const messageSchema = new Schema({
-  subject: String,
-  body: String,
+  clientName: String,
+  address: String,
+  phone: Number,
+  quantity:{
+    type: Number,
+    min: 0
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref:'User'
-  },
+  }
 },{
   timestamps:{
     updatedAt: 'updated_at',
@@ -15,5 +20,4 @@ const messageSchema = new Schema({
   }
 })
 
-const message = mongoose.model('Message', messageSchema);
-module.exports = message;
+module.exports = mongoose.model('Message', messageSchema);

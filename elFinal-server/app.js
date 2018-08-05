@@ -80,9 +80,12 @@ app.locals.title = 'CasaBonitaMuebles';
 const index = require('./routes/index');
 const products = require('./routes/product');
 const auth  = require('./routes/auth');
+const message = require('./routes/message')
 app.use('/', auth);
-app.use('/', products);
+app.use('/messages', message);
+app.use('/products', products);
 app.use('/', index);
+
 
 
 module.exports = app;
