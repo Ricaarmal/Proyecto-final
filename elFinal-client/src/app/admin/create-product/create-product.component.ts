@@ -9,7 +9,7 @@ import { ProductsService } from '../../services/products.service';
 })
 export class CreateProductComponent implements OnInit {
 
-  furniture: object = {};
+  furniture: any;
   newProduct: object = {};
   isCollapsed = false;
   file: any;

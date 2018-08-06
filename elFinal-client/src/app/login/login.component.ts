@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  auth: object = {};
+  auth: any;
   usuario: any = {};
 
   constructor(

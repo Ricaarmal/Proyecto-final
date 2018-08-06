@@ -13,6 +13,7 @@ export class SignupComponent implements OnInit {
   correo = '';
   password = '';
   password2 = '';
+  public isCollapsed = false;
 
   constructor(
     private authService: AuthService
