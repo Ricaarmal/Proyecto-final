@@ -9,13 +9,20 @@ import { MessagesService } from '../../services/messages.service';
 })
 export class ShowMessagesComponent implements OnInit {
 
+  messages: any;
   usuario;
+
   constructor(
     private messageService: MessagesService
   ) { }
 
   ngOnInit() {
     this.usuario = JSON.parse(localStorage.getItem('user'));
+
+    this.messageService.getAllProducts()
+    .subscribe(message => {
+      this.messages = message;
+    });
   }
 
 }

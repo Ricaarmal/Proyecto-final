@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MessagesService } from '../../services/messages.service';
+import { ProductsService } from '../../services/products.service';
+
 
 @Component({
   selector: 'app-messages',
@@ -10,12 +13,22 @@ export class MessagesComponent implements OnInit {
   usuario: any = {};
   public isCollapsed = false;
   message: any = {};
+  product: any = {};
+  id: any;
 
   constructor(
-    private messageService: MessagesService
+    private messageService: MessagesService,
+    private productService: ProductsService,
+    private activeRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.activeRoute.params
+    .subscribe(params => {
+      console.log(params.id);
+      this.id = params.id;
+    });
+
     this.usuario = JSON.parse(localStorage.getItem('user'));
   }
 

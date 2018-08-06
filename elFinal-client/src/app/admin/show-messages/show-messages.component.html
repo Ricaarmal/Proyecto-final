@@ -1,3 +1,10 @@
-<p>
-  show-messages works!
-</p>
+<section>
+  <h2>Ordenes</h2>
+  <div class="container">
+    <div *ngFor="let messag of messages" class="container1">
+          <h3>{{messag.clientName}}</h3> 
+          <p>{{messag.address}}</p>
+          <p>{{messag.phone}}</p>
+    </div>
+  </div>
+</section>

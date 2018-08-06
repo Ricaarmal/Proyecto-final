@@ -1,0 +1,33 @@
+
+<div *ngIf="usuario.role == 'ADMIN'">
+    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+      Editar Pedido
+    </button>
+  </div>
+  
+  
+  <div id="collapseExample" [ngbCollapse]="isCollapsed" *ngIf="usuario.role == 'ADMIN'">
+    <div class="card">
+      <div class="card-body">
+        <section class="container">
+          <div class="raw">
+            <h2>Editar Producto</h2>
+            <p>
+            Nombre del Producto:
+            <input type="text" placeholder="Direccion" [(ngModel)]="producto.name" value="original {{product.name}}" disabled>
+            </p>
+            <p>
+              Precio
+            <input type="number" placeholder="original {{product.price}}" [(ngModel)]="producto.price">
+            </p>
+            <p>
+              Cantidad en Stock:
+            <input type="number" placeholder="cantidad actual {{product.quantity}}" [(ngModel)]="producto.quantity" min="0" max="50">
+            </p>
+            <button (click)="modify(message)">Editar</button>
+          </div>
+        </section>      
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,8 @@
+.acomodar{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+app-edit-product{
+  margin-top: 30px; 
+}

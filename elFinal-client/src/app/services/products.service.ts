@@ -7,7 +7,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductsService {
+
   url = 'http://localhost:3000/products';
+  // url = '';
 
   constructor(private http: Http) { }
 

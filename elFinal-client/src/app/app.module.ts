@@ -31,6 +31,8 @@ import { ProductsService } from './services/products.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { MessagesComponent } from './product-detail/messages/messages.component';
 import { ShowMessagesComponent } from './admin/show-messages/show-messages.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { EditProductComponent } from './product-detail/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ShowMessagesComponent } from './admin/show-messages/show-messages.compo
     SignupComponent,
     ProductDetailComponent,
     MessagesComponent,
-    ShowMessagesComponent
+    ShowMessagesComponent,
+    AboutUsComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

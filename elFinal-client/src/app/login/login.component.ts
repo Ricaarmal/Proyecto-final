@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.usuario = JSON.parse(localStorage.getItem('user'));
+    if (this.usuario.role === 'ADMIN') {
+      this.router.navigate(['admin']);
+    }
   }
-
 }

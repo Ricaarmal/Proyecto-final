@@ -1,0 +1,23 @@
+.container{
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+div{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+h2{
+  color: red;
+  text-align: center;
+}
+
+p{
+  margin: 20px;
+  color: saddlebrown;
+}
+
+ul{
+  color: saddlebrown;
+}

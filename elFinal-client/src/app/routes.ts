@@ -1,4 +1,3 @@
-import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AdminComponent } from './admin/admin/admin.component';
@@ -7,6 +6,7 @@ import { CreateProductComponent } from './admin/create-product/create-product.co
 import { Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 export const routes: Routes = [
   {
@@ -29,5 +29,8 @@ export const routes: Routes = [
   },
   {
     path: 'products', component: ProductsComponent
+  },
+  {
+    path: 'aboutus', component: AboutUsComponent
   }
 ];

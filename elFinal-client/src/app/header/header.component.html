@@ -1,15 +1,18 @@
 <nav class="navbar navbar-dark color">
-    <img class="navbar-brand" src="http://www.casabonitamuebles.com.mx/web-content/images/logo.svg" alt="err">
-    
+  <a [routerLink]="['']">  
+  <img class="navbar-brand" src="http://www.casabonitamuebles.com.mx/web-content/images/logo.svg" alt="err">
+  </a>  
     <div class="navbar-expand mr-auto">
       <div class="navbar-nav">
         <a class="nav-item letra1" [routerLink]="['']">|  Home  |</a>
         
-        <a class="nav-item letra1" href="#">|   About     |</a>
+        <a class="nav-item letra1" [routerLink]="['aboutus']">|   About     |</a>
 
         <a class="nav-item letra1" [routerLink]="['products']">|    Productos    |</a>
 
         <a class="nav-item letra1" [routerLink]="['login']">|    Login    |</a>
+
+        <button *ngIf="usuario.role === 'TENDER' && !usuario" class="nav-item letra1" (click)="logout()">Logout Tender</button>
       </div>
     </div>
     <div class="navbar-expand ml-auto navbar-nav">

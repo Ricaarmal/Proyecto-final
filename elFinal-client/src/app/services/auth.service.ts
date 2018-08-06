@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   url = 'http://localhost:3000/';
+  // url = '';
+
   constructor(private http: Http) { }
 
   signup(auth): Observable<string> {
