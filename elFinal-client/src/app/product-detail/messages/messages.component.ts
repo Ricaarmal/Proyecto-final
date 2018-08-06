@@ -25,7 +25,6 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.params
     .subscribe(params => {
-      console.log(params.id);
       this.id = params.id;
     });
 
@@ -36,7 +35,6 @@ export class MessagesComponent implements OnInit {
     this.messageService.createMessage(this.message)
     .subscribe(message => {
       alert('Pedido Creado');
-      console.log(message);
     });
   }
 
