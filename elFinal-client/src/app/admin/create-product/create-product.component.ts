@@ -9,7 +9,11 @@ import { ProductsService } from '../../services/products.service';
 })
 export class CreateProductComponent implements OnInit {
 
-  furniture: any;
+  furniture: any = {
+    name: '',
+    quantity: '',
+    price: ''
+  };
   newProduct: object = {};
   isCollapsed = false;
   file: any;
@@ -36,7 +40,6 @@ export class CreateProductComponent implements OnInit {
 
     this.productService.createProduct(newFurniture)
     .subscribe(producto => {
-      console.log(producto);
       this.newProduct = producto;
       this.router.navigate(['']);
     });

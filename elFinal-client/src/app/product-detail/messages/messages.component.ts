@@ -33,7 +33,7 @@ export class MessagesComponent implements OnInit {
   }
 
   saveMessage() {
-    this.messageService.createProduct(this.message)
+    this.messageService.createMessage(this.message)
     .subscribe(message => {
       alert('Pedido Creado');
       console.log(message);

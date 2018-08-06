@@ -9,7 +9,7 @@ import { MessagesService } from '../../services/messages.service';
 })
 export class ShowMessagesComponent implements OnInit {
 
-  messages: any;
+  messages;
   usuario;
 
   constructor(
@@ -19,7 +19,7 @@ export class ShowMessagesComponent implements OnInit {
   ngOnInit() {
     this.usuario = JSON.parse(localStorage.getItem('user'));
 
-    this.messageService.getAllProducts()
+    this.messageService.getAllMessages()
     .subscribe(message => {
       this.messages = message;
     });

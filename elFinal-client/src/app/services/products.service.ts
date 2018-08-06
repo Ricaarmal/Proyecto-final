@@ -24,7 +24,7 @@ export class ProductsService {
   }
 
   createProduct(obj) {
-    return this.http.post(this.url + 'new', obj)
+    return this.http.post(this.url + '/new', obj)
     .pipe(map((res: Response) => res.json()));
   }
 

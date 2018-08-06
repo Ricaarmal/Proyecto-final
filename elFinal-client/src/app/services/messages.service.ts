@@ -14,22 +14,22 @@ export class MessagesService {
 
   constructor(private http: Http) { }
 
-  getAllProducts(): Observable<string> {
+  getAllMessages(): Observable<string> {
     return this.http.get(this.url)
     .pipe(map((res: Response) => res.json()));
   }
 
-  getOneProduct(id): Observable<string> {
+  getOneMessage(id): Observable<string> {
     return this.http.get(this.url + id)
     .pipe(map((res: Response) => res.json() ));
   }
 
-  createProduct(obj) {
+  createMessage(obj) {
     return this.http.post(this.url + '/create', obj)
     .pipe(map((res: Response) => res.json()));
   }
 
-  editProduct(obj): Observable<string> {
+  editMessage(obj): Observable<string> {
     return this.http.put(this.url + obj._id, obj)
     .pipe(map((res: Response) => res.json()));
   }
