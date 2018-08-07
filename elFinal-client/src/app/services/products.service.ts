@@ -8,8 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class ProductsService {
 
-  // url = 'http://localhost:3000/products';
-  url = 'https://casa-bonita.herokuapp.com/products';
+  url = 'http://localhost:3000/products';
+  // url = 'https://casa-bonita.herokuapp.com/products';
 
   constructor(private http: Http) { }
 

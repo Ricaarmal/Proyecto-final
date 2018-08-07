@@ -1,16 +1,16 @@
-.color{
-  background-color: #F0EAEA;
-  border-top: 3px solid chocolate; 
+.page-footer{
+  background-color:  #F0EAEA;
+  border-top: 3px solid chocolate;
 }
 
-.letra-color{
-  color: rgb(133, 34, 34);
-  display: block;
+a{
+  text-transform: none;
+  color: darkred;
+}
+ul{
+  display: inline;
 }
 
-.bottom{
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1030;
+h4{
+  color: darkred;
 }

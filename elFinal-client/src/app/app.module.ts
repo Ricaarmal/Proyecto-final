@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 // Components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -58,7 +59,7 @@ import { EditProductComponent } from './product-detail/edit-product/edit-product
     HttpModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
 
   ],
   providers: [AuthService, ProductsService],

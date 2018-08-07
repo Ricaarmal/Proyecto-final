@@ -1,25 +1,19 @@
-.color{
-  background-color: #F0EAEA;
-  border-bottom: 3px solid chocolate; 
-}
-
 img{
-  width: 150px;
-  height: 110px;
+  width: 200px;
+  height: 100px;
 }
 
-.letra{
-  color: black;
-  display: block;
-  padding: 0.5rem 1rem;
+.nav-wrapper{
+  height: 100px;
+  background-color: #F0EAEA;
+  border-bottom: 3px solid chocolate;
 }
 
-.letra1{
-  color: saddlebrown;
-  display: block;
-  padding: 0.5rem 1rem;
+ul{
+  padding-top: 20px;
 }
 
-.bg{
-  background-color: gray;
+a{
+  text-transform: none;
+  color: darkred;
 }

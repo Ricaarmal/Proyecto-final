@@ -9,8 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class MessagesService {
 
-  // url = 'http://localhost:3000/messages';
-  url = 'https://casa-bonita.herokuapp.com/messages';
+  url = 'http://localhost:3000/messages';
+  // url = 'https://casa-bonita.herokuapp.com/messages';
 
   constructor(private http: Http) { }
 

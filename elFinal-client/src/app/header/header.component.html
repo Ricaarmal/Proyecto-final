@@ -1,28 +1,40 @@
-<nav class="navbar navbar-dark color">
-  <a [routerLink]="['']">  
-  <img class="navbar-brand" src="http://www.casabonitamuebles.com.mx/web-content/images/logo.svg" alt="err">
+<nav class="nav-wrapper">  
+  <a [routerLink]="['']" class="brand-logo">
+      <img src="http://www.casabonitamuebles.com.mx/web-content/images/logo.svg" alt="err">
   </a>  
-    <div class="navbar-expand mr-auto">
-      <div class="navbar-nav">
-        <a class="nav-item letra1" [routerLink]="['']">|  Home  |</a>
-        
-        <a class="nav-item letra1" [routerLink]="['aboutus']">|   About     |</a>
-
-        <a class="nav-item letra1" [routerLink]="['products']">|    Productos    |</a>
-
-        <a class="nav-item letra1" [routerLink]="['login']">|    Login    |</a>
-
+    
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> 
+          <a class="nav-item letra1" [routerLink]="['']">|  Home  |</a>
+        </li>
+        <li>
+          <a class="nav-item letra1" [routerLink]="['aboutus']">|   About     |</a>
+        </li>
+        <li>
+          <a class="nav-item letra1" [routerLink]="['products']">|    Productos    |</a>
+        </li>
+        <li>
+          <a class="nav-item letra1" [routerLink]="['login']">|    Login    |</a>
+        </li>
+        <li>
         <button *ngIf="usuario.role === 'TENDER' && !usuario" class="nav-item letra1" (click)="logout()">Logout Tender</button>
-      </div>
-    </div>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="https://www.facebook.com/casabonitamueblesofficial?fref=ts" target="">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="https://twitter.com/Casabonitam" target="_blank">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+
     <div class="navbar-expand ml-auto navbar-nav">
       <div class="navbar-nav bg">
-        <a class="nav-item nav-link" href="https://www.facebook.com/casabonitamueblesofficial?fref=ts" target="">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a class="nav-item nav-link" href="https://twitter.com/Casabonitam" target="_blank">
-          <i class="fa fa-twitter"></i>
-        </a>
+       
+        
       </div>
     </div>
   </nav>
