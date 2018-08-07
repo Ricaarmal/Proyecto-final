@@ -33,3 +33,8 @@ app-create-product{
 app-signup{
   margin: 20px;
 }
+
+button{
+  width: 80px;
+  height: 50px;
+}

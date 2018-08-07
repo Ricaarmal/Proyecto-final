@@ -29,7 +29,7 @@ export class ProductsService {
   }
 
   editProduct(obj): Observable<string> {
-    return this.http.put(this.url + obj._id, obj)
+    return this.http.put(this.url + '/' + obj._id, obj)
     .pipe(map((res: Response) => res.json()));
   }
 

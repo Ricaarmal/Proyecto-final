@@ -34,6 +34,7 @@ export class EditProductComponent implements OnInit {
     this.productService.getOneProduct(this.id)
     .subscribe(product => {
       this.product = product;
+      this.producto = this.product;
     });
   }
 
@@ -41,7 +42,7 @@ export class EditProductComponent implements OnInit {
     if (!window.confirm('¿Estas seguro?')) { return; }
     this.productService.editProduct(this.producto)
     .subscribe(() => {
-      this.routes.navigate(['detail/:id']);
+      this.routes.navigate(['products']);
     });
   }
 

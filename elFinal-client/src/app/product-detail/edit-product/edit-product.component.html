@@ -15,7 +15,7 @@
             <h2>Editar Producto</h2>
             <p>
             Nombre del Producto:
-            <input type="text" placeholder="Direccion" [(ngModel)]="producto.name" value="original {{product.name}}" disabled>
+            <input type="text" placeholder="Direccion" [(ngModel)]="producto.name" value="original {{producto.name}}" disabled>
             </p>
             <p>
               Precio
@@ -23,9 +23,9 @@
             </p>
             <p>
               Cantidad en Stock:
-            <input type="number" placeholder="cantidad actual {{product.quantity}}" [(ngModel)]="producto.quantity" min="0" max="50">
+            <input type="number" placeholder="cantidad actual {{producto.quantity}}" [(ngModel)]="producto.quantity" min="0" max="50">
             </p>
-            <button (click)="modify(message)">Editar</button>
+            <button (click)="modify()">Editar</button>
           </div>
         </section>      
       </div>

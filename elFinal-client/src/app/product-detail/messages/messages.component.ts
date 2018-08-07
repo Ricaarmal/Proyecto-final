@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MessagesService } from '../../services/messages.service';
 import { ProductsService } from '../../services/products.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +21,9 @@ export class MessagesComponent implements OnInit {
   constructor(
     private messageService: MessagesService,
     private productService: ProductsService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -32,9 +36,11 @@ export class MessagesComponent implements OnInit {
   }
 
   saveMessage() {
+    this.message.user = this.usuario._id;
     this.messageService.createMessage(this.message)
     .subscribe(message => {
       alert('Pedido Creado');
+      this.router.navigate(['products']);
     });
   }
 
