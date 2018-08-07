@@ -37,6 +37,7 @@ export class MessagesComponent implements OnInit {
 
   saveMessage() {
     this.message.user = this.usuario._id;
+    this.message.product = this.id;
     this.messageService.createMessage(this.message)
     .subscribe(message => {
       alert('Pedido Creado');

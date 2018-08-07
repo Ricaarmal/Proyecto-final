@@ -11,9 +11,12 @@ img{
 
 ul{
   padding-top: 20px;
-}
-
-a{
-  text-transform: none;
   color: darkred;
+}
+a{
+  color: darkred;
+  text-transform: none;
+}
+i{
+  text-transform: none;
 }

@@ -5,6 +5,10 @@ section{
   flex-wrap: wrap;
 }
 
+img{
+  width: 500px;
+}
+
 .text{
   font-family: 'Raleway';
   font-size: 1.5em;

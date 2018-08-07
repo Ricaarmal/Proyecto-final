@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import * as M from 'materialize-css/dist/js/materialize';
 
 
 @Component({
@@ -9,7 +8,7 @@ import * as M from 'materialize-css/dist/js/materialize';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, AfterViewInit {
+export class LoginComponent implements OnInit {
 
   material;
 
@@ -47,9 +46,5 @@ export class LoginComponent implements OnInit, AfterViewInit {
     if (this.usuario.role === 'ADMIN') {
       this.router.navigate(['admin']);
     }
-  }
-
-  ngAfterViewInit() {
-   this.material = M.updateTextFiles();
   }
 }

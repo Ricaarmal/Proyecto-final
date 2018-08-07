@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@ng-bootstrap/ng-bootstrap": "^2.2.1",
+    "@types/googlemaps": "^3.30.11",
     "@types/materialize-css": "^1.0.4",
     "angular2-materialize": "^15.1.10",
     "bootstrap": "^4.1.3",
