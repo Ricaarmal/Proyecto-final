@@ -21,6 +21,7 @@ export class ShowMessagesComponent implements OnInit {
 
     this.messageService.getAllMessages()
     .subscribe(message => {
+      console.log(message);
       this.messages = message;
     });
   }
