@@ -2,7 +2,8 @@
   <h2>Ordenes</h2>
   <div class="container">
     <div *ngFor="let messag of messages" class="container1">
-          <h3>{{messag.clientName}}</h3> 
+          <h3>{{messag.clientName}}</h3>
+          <p>Creado: {{messag.created_at | date: 'medium'}}</p> 
           <p>{{messag.address}}</p>
           <p>{{messag.phone}}</p>
           <p>Cantidad a Editar: {{messag.quantity}}</p>
