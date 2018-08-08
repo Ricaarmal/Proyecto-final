@@ -1,7 +1,7 @@
 <div class="container">
   <div class="raw">
     <h2>Iniciar Sesion</h2>
-    <p class="alert-danger" *ngIf="loginFail">{{loginFail}}</p>
+    <p class="alert-danger" *ngIf="logginFail">{{logginFail}}</p>
     <div class="row">
         <div class="input-field col s6">
           <input value="" id="first_name" type="text" class="validate" name="email" [(ngModel)]="auth.email" #loginEmail='ngModel' email required >
