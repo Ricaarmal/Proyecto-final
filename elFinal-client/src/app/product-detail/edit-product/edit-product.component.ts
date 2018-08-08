@@ -46,4 +46,13 @@ export class EditProductComponent implements OnInit {
     });
   }
 
+  delete() {
+    if (!window.confirm('Estas Seguro?')) { return; }
+    this.productService.deleteProduct(this.id)
+    .subscribe(() => {
+      alert('Producto Eliminado');
+      this.routes.navigate(['products']);
+    });
+  }
+
 }

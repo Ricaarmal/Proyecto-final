@@ -41,7 +41,8 @@ export class CreateProductComponent implements OnInit {
     this.productService.createProduct(newFurniture)
     .subscribe(producto => {
       this.newProduct = producto;
-      this.router.navigate(['']);
+      alert('Producto Creado');
+      this.router.navigate(['products']);
     });
   }
 

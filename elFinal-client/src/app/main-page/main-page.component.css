@@ -8,6 +8,11 @@
   img{
     width: 70vw;
   }
+
+  .container{
+    margin: 50px;
+    padding-left: 130px;
+  }
 }
 
 @media (min-width: 1000px) {

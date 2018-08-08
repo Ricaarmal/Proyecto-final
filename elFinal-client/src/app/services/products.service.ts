@@ -8,8 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class ProductsService {
 
-  url = 'http://localhost:3000/products';
-  // url = 'https://casa-bonita.herokuapp.com/products';
+  // url = 'http://localhost:3000/products';
+  url = 'https://casa-bonita.herokuapp.com/products';
 
   constructor(private http: Http) { }
 
@@ -34,7 +34,7 @@ export class ProductsService {
   }
 
   deleteProduct(id): Observable<string> {
-    return this.http.delete(this.url + id)
+    return this.http.delete(this.url + '/' + id)
     .pipe(map((res: Response) => res.json()));
   }
 }

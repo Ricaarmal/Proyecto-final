@@ -1,13 +1,22 @@
 <div class="container">
   <div class="raw">
     <h2>Iniciar Sesion</h2>
+    <p class="alert-danger" *ngIf="loginFail">{{loginFail}}</p>
     <div class="row">
         <div class="input-field col s6">
-          <input value="" id="first_name2" type="text" class="validate" [(ngModel)]="auth.email">
+          <input value="" id="first_name" type="text" class="validate" name="email" [(ngModel)]="auth.email" #loginEmail='ngModel' email required >
           <label class="active" for="first_name2">email@email.com</label>
+          <div *ngIf="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)" class="alert alert-danger">
+              <span class="helper-text" *ngIf="loginEmail.errors.required">
+                Email is required.
+              </span>
+              <span class="helper-text" *ngIf="loginEmail.errors.email">
+                Invalid email.
+              </span>
+            </div>
         </div>
         
-      </div>
+    </div>
     <!-- <p>
       Introduzca su Correo:
       <br>
@@ -15,18 +24,25 @@
     </p> -->
     <div class="row">
       <div class="input-field col s6">
-          <input value="" id="first_name2" type="password" [(ngModel)]="auth.password" class="validate">
+          <input value="" id="first_name2" type="password" [(ngModel)]="auth.password" name="password" #loginPassword='ngModel' minlength="5" class="validate" required>
           <label class="active" for="first_name2">Password</label>
+      <div *ngIf="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)" class="alert alert-danger">
+          <span class="helper-text" *ngIf="loginPassword.errors.required">
+            Password is required.
+          </span>
+          <span class="helper-text" *ngIf="loginPassword.errors.minlength">
+            Password need to be at least 6 caracters long.
+          </span>
+        </div>
       </div>
-    </div>
+  </div>
     <!-- <p>
       Introduzca su Contraseña:
       <br>
       <input type="password" [(ngModel)]="auth.password">
     </p> -->
   
-      <button class="btn waves-effect waves-light" (click)="login()" type="submit" name="action">Submit
-      </button>
+      <button class="btn waves-effect waves-light" (click)="login()" type="submit" name="action">Submit</button>
     
     <!-- <button (click)="login()">Login</button> -->
   </div>

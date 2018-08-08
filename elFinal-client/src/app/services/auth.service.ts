@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  url = 'http://localhost:3000/';
-  // url = 'https://casa-bonita.herokuapp.com/';
+  // url = 'http://localhost:3000/';
+  url = 'https://casa-bonita.herokuapp.com/';
 
   constructor(private http: Http) { }
 
@@ -21,6 +21,13 @@ export class AuthService {
   login(auth): Observable<string> {
     return this.http.post(this.url + 'login', auth, {withCredentials: true})
     .pipe(map(res => res.json()));
+  }
+
+  getLoggedUser(): Observable<string> {
+    return this.http.get(this.url + 'loggedUser', {withCredentials: true})
+    .pipe(map(res => {
+      return res.json();
+    }));
   }
 
   getPrivateProducts() {

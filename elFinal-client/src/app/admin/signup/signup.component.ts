@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
   recibiendoElForm(form) {
     this.authService.signup(form.value)
     .subscribe(r => {
+      alert('Nuevo empleado Creado');
       console.log(r);
     });
     console.log(form.value);

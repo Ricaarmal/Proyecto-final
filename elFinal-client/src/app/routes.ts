@@ -7,6 +7,7 @@ import { Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { TenderProComponent } from './tender/tender-pro/tender-pro.component';
 
 export const routes: Routes = [
   {
@@ -16,7 +17,7 @@ export const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'admin', component: AdminComponent,
+    path: 'admini', component: AdminComponent,
   },
   {
     path: 'signup', component: SignupComponent
@@ -32,5 +33,8 @@ export const routes: Routes = [
   },
   {
     path: 'aboutus', component: AboutUsComponent
+  },
+  {
+    path: 'tender', component: TenderProComponent
   }
 ];

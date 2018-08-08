@@ -1,0 +1,17 @@
+<div class="saludo">
+    <h2>Ordenes de {{user.username}}</h2>
+</div>
+<button (click)="logout()">Logout</button>
+
+<section class="all">
+    <div class="row size">
+        <div class="col s12 m5">
+          <div *ngFor="let messag of messages" class="card-panel teal white-text">
+            <p>{{messag.clientName}}</p>
+            <p>{{messag.address}}</p>
+            <p>{{messag.phone}}</p>
+            <p>Producto: {{messag.product}}</p>
+          </div>
+        </div>
+      </div>
+</section>

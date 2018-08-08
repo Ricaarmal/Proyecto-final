@@ -34,6 +34,7 @@ import { MessagesComponent } from './product-detail/messages/messages.component'
 import { ShowMessagesComponent } from './admin/show-messages/show-messages.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { EditProductComponent } from './product-detail/edit-product/edit-product.component';
+import { TenderProComponent } from './tender/tender-pro/tender-pro.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { EditProductComponent } from './product-detail/edit-product/edit-product
     MessagesComponent,
     ShowMessagesComponent,
     AboutUsComponent,
-    EditProductComponent
+    EditProductComponent,
+    TenderProComponent
   ],
   imports: [
     BrowserModule,

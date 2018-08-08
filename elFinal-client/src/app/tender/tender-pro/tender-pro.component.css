@@ -1,0 +1,24 @@
+.size{
+  width: 350px;
+}
+
+h2{
+  text-align: center;
+}
+
+.all{
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.saludo{
+  margin: 30px;
+  text-align: center;
+  width: 300px; 
+}
+
+button{
+  width: 80px;
+  height: 50px;
+}
